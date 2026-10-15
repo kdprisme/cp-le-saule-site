@@ -1,0 +1,183 @@
+/* Centre pedriatrique Le Saule - styles communs a toutes les pages.
+   Genere par outils/extraire.py, modifiable a la main ensuite. */
+
+html, body { margin: 0; padding: 0; }
+body { background: #ffffff; }
+
+.cpls-page {
+  --teal-dark: #647778;
+  --teal: #52605f;
+  --teal-mint: #74cbcb;
+  --teal-mint-light: #e1eceb;
+  --pink: #e44b6b;
+  --pink-dark: #c93f5c;
+  --amber: #d9a441;
+  --cream: #faf7f2;
+  --white: #ffffff;
+  --ink: #647778;
+  --body-text: #707d7c;
+  --gray-border: #e7e0d2;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Poppins', Arial, sans-serif;
+
+  font-family: var(--font-sans);
+  color: var(--body-text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+.cpls-page, .cpls-page *, .cpls-page *::before, .cpls-page *::after {
+    box-sizing: border-box;
+  }
+.cpls-page img { max-width: 100%; display: block; }
+.cpls-page a { text-decoration: none; color: inherit; }
+.cpls-page ul { list-style: none; margin: 0; padding: 0; }
+.cpls-page p { margin: 0; }
+.cpls-page h1, .cpls-page h2, .cpls-page h3, .cpls-page h4 {
+  font-family: var(--font-serif);
+  color: var(--teal-dark);
+  margin: 0;
+  line-height: 1.15;
+}
+.cpls-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+.cpls-section { padding: 90px 0; }
+
+.cpls-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+.cpls-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+.cpls-btn.cpls-btn-solid-teal { background: var(--teal-dark); color: var(--white); }
+.cpls-btn.cpls-btn-solid-teal:hover { background: var(--teal); }
+.cpls-btn.cpls-btn-outline-teal { background: transparent; color: var(--teal-dark); border-color: var(--teal-dark); }
+.cpls-btn.cpls-btn-outline-teal:hover { background: var(--teal-dark); color: var(--white); }
+.cpls-btn.cpls-btn-solid-pink { background: var(--pink); color: var(--white); }
+.cpls-btn.cpls-btn-solid-pink:hover { background: var(--pink-dark); }
+.cpls-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-border);
+  }
+.cpls-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+  }
+.cpls-logo { display: flex; align-items: center; gap: 10px; }
+.cpls-logo-mark { width: 44px; height: 44px; flex-shrink: 0; object-fit: contain; }
+.cpls-logo-text-1 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    display: block;
+  }
+.cpls-nav { display: flex; align-items: center; gap: 32px; }
+.cpls-nav a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--teal-dark);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+.cpls-nav a:hover, .cpls-nav a.is-active { border-bottom-color: var(--pink); }
+.cpls-nav-dropdown { position: relative; }
+.cpls-nav-dropdown-toggle {
+    display: flex; align-items: center; gap: 4px;
+    background: none; border: none; cursor: pointer; font-family: var(--font-sans);
+    font-size: 15px; font-weight: 500; color: var(--teal-dark);
+    padding-bottom: 4px; border-bottom: 2px solid transparent;
+  }
+.cpls-nav-dropdown-toggle svg { width: 14px; height: 14px; transition: transform .2s ease; }
+.cpls-nav-dropdown-toggle:hover, .cpls-nav-dropdown-toggle.is-active,
+  .cpls-nav-dropdown.open .cpls-nav-dropdown-toggle { border-bottom-color: var(--pink); }
+.cpls-nav-dropdown:hover .cpls-nav-dropdown-toggle svg,
+  .cpls-nav-dropdown.open .cpls-nav-dropdown-toggle svg { transform: rotate(180deg); }
+.cpls-nav-dropdown-menu {
+    display: none; flex-direction: column;
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    margin-top: 10px; min-width: 240px; padding: 10px;
+    background: var(--white); border: 1px solid var(--gray-border); border-radius: 14px;
+    box-shadow: 0 20px 40px -20px rgba(100, 119, 120, .35); z-index: 50;
+  }
+.cpls-nav-dropdown-menu a {
+    display: block; padding: 10px 14px; border-radius: 8px;
+    font-size: 14px; font-weight: 500; color: var(--teal-dark);
+  }
+.cpls-nav-dropdown-menu a:hover { background: var(--teal-mint-light); }
+.cpls-nav-dropdown:hover .cpls-nav-dropdown-menu,
+  .cpls-nav-dropdown.open .cpls-nav-dropdown-menu,
+  .cpls-nav-dropdown:focus-within .cpls-nav-dropdown-menu { display: flex; }
+.cpls-header-cta { display: flex; align-items: center; gap: 16px; }
+.cpls-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+.cpls-burger svg { width: 26px; height: 26px; color: var(--teal-dark); }
+.cpls-footer { background: var(--cream); padding: 70px 0 0; }
+.cpls-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+.cpls-footer-social { display: flex; gap: 12px; }
+.cpls-footer-social a {
+    width: 38px; height: 38px;
+    border: 1.5px solid var(--teal-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+.cpls-footer-social svg { width: 17px; height: 17px; color: var(--teal-dark); }
+.cpls-footer-social a:hover { background: var(--teal-dark); }
+.cpls-footer-social a:hover svg { color: var(--white); }
+.cpls-footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+.cpls-footer-col ul li a { font-size: 14.5px; color: var(--body-text); }
+.cpls-footer-col ul li a:hover { color: var(--pink); }
+.cpls-footer-contact li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--body-text); line-height: 1.5; }
+.cpls-footer-contact svg { width: 18px; height: 18px; color: var(--teal-dark); flex-shrink: 0; margin-top: 1px; }
+.cpls-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    font-size: 13px;
+    color: var(--body-text);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+.cpls-footer-bottom a:hover { color: var(--pink); }
